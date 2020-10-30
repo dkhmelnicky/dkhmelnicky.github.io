@@ -1,0 +1,44 @@
+#body{
+	background-color: #FFCC66;
+	animation: win 25s linear infinite;
+}
+section{
+	display: flex;
+	justify-content: center;
+	margin: 0 auto;
+	width: 100%;
+	margin-top: 100px;
+}
+.main{
+	text-align: center;
+	font-size: 28px;
+	font-family: 'Roboto Condensed', sans-serif;
+	margin-top: 200px;
+}
+.button{
+	background-color: darkblue;
+	color: white;
+	padding: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 10%;
+	border-radius: 4px;
+	margin: 0 auto;
+	user-select: none;
+	margin-bottom: 100px;
+}
+.button:hover{
+	cursor: pointer;
+}
+#but2,#but3{
+	display: none;
+}
+.wrapper{
+	display: flex;
+	justify-content: space-around;
+}
+@keyframes win {
+	0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+	100% {background-position: 500px 1000px, 400px 400px, 300px 300px;}
+}
