@@ -344,6 +344,8 @@ caption{
 	background-color: #5945a9;
 	padding: 12px;
 	color: white;
+	position: fixed;
+	right: 0;
 }
 @media (max-width: 768px){
 	.rate{
