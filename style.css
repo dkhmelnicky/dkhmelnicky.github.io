@@ -340,6 +340,11 @@ caption{
 #link_tiobe:hover{
 	border: 4px dotted white;
 }
+.arrow{
+	background-color: #5945a9;
+	padding: 12px;
+	color: white;
+}
 @media (max-width: 768px){
 	.rate{
 		width: 100%;
