@@ -342,12 +342,13 @@ caption{
 }
 .arrow{
 	background-color: #5945a9;
-	padding: 12px;
+	padding: 6px 12px;
 	color: white;
 	position: fixed;
 	right: 0;
 	bottom: 10px;
-	border-radius: 8px;
+	border-radius: 50%;
+	font-size: 26px;
 }
 @media (max-width: 768px){
 	.rate{
