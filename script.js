@@ -5,6 +5,15 @@ function inner(state) {
 	var statement =state;
 	if(state=='start'){
 		document.getElementById('body').style.backgroundImage= "";
+		document.getElementById('dovilny_priamokutnyk').style.display="none";
+		document.getElementById('dovilna_trapecyja').style.display="none";
+		document.getElementById('deltoid').style.display="none";
+		document.getElementById('square').style.display="none";
+		document.getElementById('priamokutnyk').style.display="none";
+		document.getElementById('parallelogram').style.display="none";
+		document.getElementById('trapezoid').style.display="none";
+		document.getElementById('diamond-narrow').style.display="none";
+		document.getElementById('priamokutna_trapecyja').style.display="none";
 		counter=0;
 	}
 	if (counter==0) {
