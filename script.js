@@ -17,7 +17,7 @@ function inner(state) {
 		counter=0;
 	}
 	if (counter==0) {
-		element.innerText="Є 2 пари паралельних сторін?";
+		element.innerText="Є ДВІ ПАРИ паралельних сторін?";
 		document.getElementById('but1').style.display = "none";
 		document.getElementById('but2').style.display = "flex";
 		document.getElementById('but3').style.display = "flex";
