@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Khmelnitskiy</title>
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+	<link rel="preconnect" href="https://fonts.gstatic.com"> 
+	<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@200;400&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Potta+One&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Vollkorn&display=swap" rel="stylesheet">
+	<script src="https://kit.fontawesome.com/7987670722.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		body{
+			background: url("back1.jpg");
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+		#woman_with_child{
+			height: 250px;
+			width: 250px;
+			bottom: 100px;
+			position: absolute;
+		}
+		.main-container{
+			width: 100vw;
+			height: 100vh;
+			position: relative;
+			display: flex;
+			background: url("https://99px.ru/sstorage/53/2011/04/tmb_13445_8807.jpg");
+			background-repeat: no-repeat;
+			background-size: cover;
+			overflow: hidden;
+		}
+		#bomb{
+			height: 200px;
+			width: 200px;
+			position: absolute;
+		}
+		#fire_1, #fire_2, #mushroom{
+			position: absolute;
+			display: none;
+		}
+		#fire_1{
+			width: 200px;
+			height: 200px;
+		}
+		#fire_2{
+
+		}
+		#mushroom{
+			width: 900px;
+			height: 900px;
+		}
+		#white_block{
+			width: 100%;
+			height: 100vh;
+			background-color: white;
+			display: none;
+			position: absolute;
+		}
+		#tank, #kv5{
+			opacity: 0;
+			position: absolute;
+			width: 400px;
+		}
+		#koliaska{
+			position: absolute;
+			width: 320px;
+			transform: rotate(-90deg);
+			display: none;
+		}
+		.wrapper{
+			width: 100%;
+			position: absolute;
+			top: 0;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			height: 200px;
+		}
+		@keyframes animate {
+			0%{
+				content: "Скільки іще забере вона";
+			}
+			33%{
+				content: "Скільки іще забере вона";
+			}
+			34%{
+				content: "Твоїх дітей,";
+			}
+			67%{
+				content: "Твоїх дітей,";
+			}
+			68%{
+				content: "Не твоя війна?";
+			}
+			100%{
+				content: "Не твоя війна?";
+			}
+			
+		}
+		@keyframes animicon {
+			0%{
+				content: "\f7b9";
+				color: black;
+				text-shadow: 0px 0px 15px red;
+			}
+			33%{
+				content: "\f7b9";
+			}
+			34%{
+				content: "\f714";
+				
+			}
+			67%{
+				content: "\f714";
+				color: black;
+				text-shadow: 0px 0px 15px red;
+			}
+			68%{
+				content: "\f67c";
+				color: grey;
+				text-shadow: 0px 0px 15px white;
+			}
+			100%{
+				content: "\f67c";
+				color: white;
+				text-shadow: 0px 0px 10px white;
+			}
+			
+		}
+		.slogan:before{
+			content: "\f4ba";
+			font-size: 3em;
+			color: white; 
+		}
+		.slogan:after{
+			animation: animate 6s infinite;
+			content: "";
+			color: white;
+			font-family: 'Vollkorn', serif;
+			font-size: 3em;
+			text-shadow: 2px 0px 10px black;
+		}
+		.icon:before{
+			content: "";
+			animation: animicon 6s infinite;
+			font-size: 4em;
+		}
+		.slogan, .icon{
+			opacity: 0;
+		}
+	</style>
+</head>
+<body>
+	<div class="main-container">
+	<img id="woman_with_child" src="111.png" alt="">
+	<img id="koliaska" src="222.png" alt="">
+	<img id="tank" src="tank.png" alt="">
+	<img id="kv5" src="tank_kv2.png" alt="">
+	<img id="bomb" src="bomb.png" alt="">
+	<img id="fire_1" src="firee.png" alt="">
+	<img id="fire_2" src="firee.png" alt="">
+	<img id="mushroom" src="93e88bdf.png" alt="">
+	<div class="wrapper">
+		<i class="fas fa-peace slogan"> </i>
+	 	<i class='fas icon'></i>
+	</div>
+	<div id="white_block"></div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+<script>
+	var width = window.innerWidth + 50;
+	var height = window.innerHeight;
+	console.log('"' + width + 'px"');
+	slogan = document.getElementsByClassName("slogan")[0];
+	icon = document.getElementsByClassName("icon")[0];
+	document.getElementById("woman_with_child").style.left =  width + 'px';
+	document.getElementById("bomb").style.left =  width/2.5 + 'px';
+	document.getElementById("bomb").style.bottom =  height+ 'px';
+	document.getElementById("fire_2").style.bottom =  "100px";
+	document.getElementById("fire_2").style.left =  "50px";
+	document.getElementById("fire_1").style.bottom =  "100px";
+	document.getElementById("fire_1").style.left =  width/1.7 + 'px';
+	document.getElementById("mushroom").style.bottom =  "-100px";
+	document.getElementById("mushroom").style.left =  width/8 + 'px';
+	document.getElementById("tank").style.bottom =  "100px";
+	document.getElementById("tank").style.left =  width/1.7 + 'px';
+	document.getElementById("kv5").style.bottom =  "100px";
+	document.getElementById("kv5").style.left =  "50px";
+	document.getElementById("koliaska").style.bottom =  "10px";
+	document.getElementById("koliaska").style.left =  width/3.3 + 'px';
+	container = document.getElementsByClassName("main-container")[0];
+		gsap
+  			.timeline({
+  			  defaults: {
+  			    duration: 1,
+  			    ease: "none"
+  			  }
+  			})
+  			.add('start')
+  			.to(woman_with_child,
+  			{
+  			  left: 400,
+  			  x: 0,
+  			  y: 0,
+  			  ease: "power1.out",
+  			  rotation: 0,
+  			  yoyo: false,
+  			  duration: 5,
+  			  delay: 0
+  			})
+  			.to(bomb,
+  			{
+
+  			  bottom: 120,
+  			  x: 0,
+  			  y: 0,
+  			  ease: "none",
+  			  rotation: 0,
+  			  yoyo: false,
+  			  duration: 2,
+  			  delay: 0
+  			})
+  			.to([fire_1,fire_2,mushroom],
+  			{
+
+  			  display: "block",
+  			  x: 0,
+  			  y: 0,
+  			  ease: "none",
+  			  rotation: 0,
+  			  yoyo: false,
+  			  duration: 0,
+  			  delay: 0
+  			})
+  			.to(woman_with_child,
+  			{
+
+  			  display: "none",
+  			  x: 0,
+  			  y: 0,
+  			  ease: "none",
+  			  rotation: 0,
+  			  yoyo: false,
+  			  duration: 0,
+  			  delay: 0
+  			})
+  			.to(container,
+  			{
+  			  background: ' url("")',
+  			  x: 0,
+  			  y: 0,
+  			  ease: "none",
+  			  rotation: 0,
+  			  yoyo: false,
+  			  duration: 0,
+  			  delay: 0
+  			})
+  			.to(white_block,
+  			{
+  			  display:"block",
+  			  x: 0,
+  			  y: 0,
+  			  ease: "none",
+  			  rotation: 0,
+  			  yoyo: false,
+  			  duration: 0,
+  			  delay: 0
+  			})
+  			.to([white_block,bomb],
+  			{
+  			  opacity: 0,
+  			  x: 0,
+  			  y: 0,
+  			  ease: "none",
+  			  rotation: 0,
+  			  yoyo: false,
+  			  duration: 2,
+  			  delay: 0
+  			})
+  			.to(koliaska,
+  			{
+  			  display: "block",
+  			  x: 0,
+  			  y: 0,
+  			  ease: "none",
+  			  yoyo: false,
+  			  duration: 0,
+  			  delay: 0
+  			})
+  			.to([fire_1,fire_2,mushroom],
+  			{
+  			  opacity: 0,
+  			  x: 0,
+  			  y: 0,
+  			  ease: "none",
+  			  rotation: 0,
+  			  yoyo: false,
+  			  duration: 2,
+  			  delay: 2
+  			})
+  			.to([kv5,tank,slogan,icon],
+  			{
+  			  opacity: 1,
+  			  x: 0,
+  			  y: 0,
+  			  ease: "none",
+  			  rotation: 0,
+  			  yoyo: false,
+  			  duration: 1,
+  			  delay: 0
+  			})
+</script>
+</body>
+</html>
